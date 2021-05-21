@@ -2,10 +2,10 @@
 
 @section('main')
 <div class="row">
-<div class="col-sm-12">
+  <div class="col-sm-12">
     <h1 class="display-3">Profile</h1>    
-  <table class="table table-striped">
-    <thead>
+    <table class="table table-striped">
+      <thead>
         <tr>
           <td>ID</td>
           <td>Name</td>
