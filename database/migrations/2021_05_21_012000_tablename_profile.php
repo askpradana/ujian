@@ -19,7 +19,7 @@ class TablenameProfile extends Migration
             $table->string('lastname', 25);
             $table->enum('gender', ['L', 'P']);
             $table->enum('kota', ['Jakarta', 'Bogor', 'Tangerang', 'Bekasi']);
-            $table->uuid('created_id');
+            $table->dateTime('created_id')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable();
         });
