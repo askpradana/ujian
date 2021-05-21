@@ -74,9 +74,11 @@ class profileController extends Controller
      * @param  \App\profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function edit(profile $profile)
+    public function edit($id)
     {
-        //
+        //func edit
+        $profile = profile::find($id);
+        return view('profile.edit', compact('profile'));
     }
 
     /**
@@ -86,9 +88,24 @@ class profileController extends Controller
      * @param  \App\profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, profile $profile)
+    public function update(Request $request, $id)
     {
-        //
+        //func update
+        $request->validate([
+            'firstname'=>'required',
+            'lastname'=>'required',
+            'gender'=>'required',
+            'kota'=>'required',
+        ]);
+
+        $profile = profile::find($id);
+        $profile->firstname = $request->get('firstname');
+        $profile->lastname = $request->get('lastname');
+        $profile->gender = $request->get('gender');
+        $profile->kota = $request->get('kota');
+        $profile->save();
+
+        return redirect('/profile')->with('success', 'Profile updated!');
     }
 
     /**
@@ -97,8 +114,12 @@ class profileController extends Controller
      * @param  \App\profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function destroy(profile $profile)
+    public function destroy($id)
     {
-        //
+        //delete func
+        $profile = profile::find($id);
+        $profile->delete();
+
+        return redirect('/profile')->with('success', 'Profile deleted!');
     }
 }

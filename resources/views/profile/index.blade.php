@@ -1,9 +1,20 @@
 @extends('base')
 
 @section('main')
+
+<div class="col-sm-12">  @if(session()->get('success'))
+    <div class="alert alert-success">
+      {{ session()->get('success') }}  
+    </div>
+  @endif
+</div>
+
 <div class="row">
 <div class="col-sm-12">
     <h1 class="display-3">Profile</h1>    
+    <div>
+        <a style="margin: 19px;" href="{{ route('profile.create')}}" class="btn btn-primary">New Input</a>
+    </div>
   <table class="table table-striped">
     <thead>
         <tr>

@@ -31,7 +31,7 @@
               <input type='radio' id='P' name='gender' value='P'>
               <label for='P'>Perempuan</label><br>
           </div>        
-          <div>
+          <div class='form-group'>
               <label for='kota'>Kota : </label>
               <select name='kota' id='kota'>
                 <option value='Tangerang'>Tangerang</option>
