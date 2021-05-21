@@ -14,7 +14,10 @@ class profileController extends Controller
      */
     public function index()
     {
-        //
+        //read
+        $profile = profile::all();
+
+        return view('profile.index', compact('profile'));
     }
 
     /**
