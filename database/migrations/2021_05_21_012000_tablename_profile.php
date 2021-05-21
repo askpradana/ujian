@@ -21,7 +21,7 @@ class TablenameProfile extends Migration
             $table->enum('kota', ['Jakarta', 'Bogor', 'Tangerang', 'Bekasi']);
             $table->uuid('created_id');
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 
